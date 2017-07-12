@@ -4,9 +4,11 @@ int main()
 		int a=0,b=0,c=0,d=1;
 		char key='\0';
 		char user='\0';
+		char rub='\0';
 		printf("welcom to the shangqian student xsp's calculator\nif you want exit,please do 'ctrl'+'c'\nhave great time and great life\n");
 		printf("you want to known how to use the tool?\ny or n?");
 		scanf("%c",&user);
+		rub=getchar();
 		if(user=='y')
 	 
 				printf("+mean add;\n-mean minus;\n*mean multiply;\n/mean divide\nfor example num+num,num-num,num*num,num/num\nnow here we go:\n");
@@ -14,13 +16,16 @@ int main()
 		while(1)
 		{
 		scanf("%d%c%d",&a,&key,&b);
+		rub=getchar();
 		if(key=='+')
 				c=a+b;
 		else if(key=='-')
 				c=a-b;
 		else if(key=='*')
 				c=a*b;
-		else if(key=='/')
+		else if(key=='/'&&b==0)
+				printf("you can't use num/0\n");
+		else if(key=='/'&&b!=0)
 				c=a/b;
 		else
 		{
