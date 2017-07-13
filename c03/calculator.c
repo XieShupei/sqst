@@ -1,6 +1,7 @@
 #include<stdio.h>
+#include<stdlib.h>
 int main()
-{
+{     //  int flag =0;
 		int a=0,b=0,c=0,d=1;
 		char key='\0';
 		char user='\0';
@@ -15,23 +16,42 @@ int main()
 
 		while(1)
 		{
+		char key='\0';		
 		scanf("%d%c%d",&a,&key,&b);
-		rub=getchar();
+	    getchar();
 		if(key=='+')
-				c=a+b;
-		else if(key=='-')
-				c=a-b;
-		else if(key=='*')
-				c=a*b;
-		else if(key=='/'&&b==0)
-				printf("you can't use num/0\n");
-		else if(key=='/'&&b!=0)
-				c=a/b;
-		else
 		{
-				printf("error:you make a mistake so we need close the calculator\n");
+			//	flag=1;
+				c=a+b;
+		}
+		else if(key=='-')
+		{
+			//	flag=1;
+				c=a-b;
+		}
+		else if(key=='*')
+		{
+			//	flag =1;
+				c=a*b;
+		}
+		else if(key=='/'&&b==0)
+		{
+				printf("you can't use num/0\n");
+	      //  	flag=0;
 				return 0;
 		}
+		        
+		else if(key=='/'&&b!=0)
+		{
+				c=a/b;
+	    //    	flag=1;
+		}
+		else
+		    {
+				printf("error:you make a mistake so we need close the calculator\n");
+				return 0;
+		    }
+	//	if(flag==1)
 		printf("the %d st result you want is:%d\n",d,c);
 		d+=1;
 		
